@@ -3,11 +3,11 @@ import * as path from 'path';
 import { Dialect } from "sequelize";
 
 const dbConfig = {
-  host: process.env.DB_HOST,
-  port: parseInt(process.env.DB_PORT),
-  database: process.env.DATABASE,
-  username: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
+  host: "localhost",
+  port: 3306,
+  database: "ripley",
+  username: "unisuser",
+  password:"password",
   dialect: 'mysql' as Dialect
 }
 
@@ -19,7 +19,7 @@ const options = {
     acquire: 30000,
     idle: 10000,
   },
-  models: [path.join(__dirname, '../models')]
+  models: [path.join(__dirname, '/models')]
 }
 
 export default new Sequelize(options)
