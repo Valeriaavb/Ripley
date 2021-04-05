@@ -5,6 +5,7 @@ Para realizar la conexion a la BD se necesitan los siguientes parametros:
   username: "unisuser",
   password:"password"
   
+  Fue realizado con ORM sequelize 
   
   
 
