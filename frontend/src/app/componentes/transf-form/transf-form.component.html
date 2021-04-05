@@ -4,19 +4,14 @@
       <div class="card-body">
         <form [formGroup]="transfForm" (ngSubmit)="enviarTrans()" novalidate>
           <h4>Transferir</h4>
-
           <div class="form-group">
-
             <label for="search">Buscar Destinatario</label>
             &nbsp;
             <select2 [data]="destinariosToShow" [cssImport]=true [options]="optionsSelect"
               (valueChanged)="userSelected($event)"></select2>
           </div>
-
           <div class="form-group" *ngIf=destinatario>
-
             <h5>Datos del Destinarario</h5>
-
             <div> <label>Nombre: {{destinatario[0] ? destinatario[0].nombre : ''}}</label></div>
             <div> <label>RUT: {{destinatario[0] ? destinatario[0].rut: '' }}</label></div>
             <div> <label>Correo: {{destinatario[0] ? destinatario[0].correo : ''}}</label></div>
@@ -24,23 +19,18 @@
             <div> <label>Banco: {{destinatario[0] ? destinatario[0].banco: '' }}</label></div>
             <div> <label>Tipo de cuenta: {{destinatario[0] ? destinatario[0].tipo_cuenta : ''}}</label></div>
             <div> <label>Número de cuenta: {{destinatario[0] ? destinatario[0].n_cuenta : ''}}</label></div>
-
           </div>
-
-
-            <div class="row">
-              <div class="form-group">
-                <label for="monto" style="padding-top: 22%;">Monto:</label>
-              </div>
-              <div class="form-group">
-                <input id="monto" type="number" min=1 formControlName="monto" class="form-control" placeholder="Monto">
-                <div *ngIf="transfForm.get('monto').errors && transfForm.get('monto').dirty">
-                  <p *ngIf="transfForm.get('monto').hasError('requiered')">Debe llenar el campo</p>
-                </div>
+          <div class="row">
+            <div class="form-group">
+              <label for="monto" style="padding-top: 22%;">Monto:</label>
+            </div>
+            <div class="form-group">
+              <input id="monto" type="number" min=1 formControlName="monto" class="form-control" placeholder="Monto">
+              <div *ngIf="transfForm.get('monto').errors && transfForm.get('monto').dirty">
+                <p *ngIf="transfForm.get('monto').hasError('requiered')">Debe llenar el campo</p>
               </div>
             </div>
-
-
+          </div>
           <div class="row">
             <div class="form-group ">
               <label for="descripcion" style="padding-top: 22%;">Descripción:</label>
@@ -53,16 +43,6 @@
               </div>
             </div>
           </div>
-
-
-          <!-- 
-              <label for="nombre">Nombre:</label>
-              <input id="nombre" type="text" formControlName="nombre" class="form-control"
-                placeholder="Nombre del destinatario">
-              <div *ngIf="transfForm.get('nombre').errors && transfForm.get('nombre').dirty">
-                <p *ngIf="transfForm.get('nombre').hasError('requiered')">Debe llenar el campo</p>
-              </div> -->
-
           <div class="row justify-content-around">
             <div class="form-group mb-4 col-md-4">
               <button class="btn btn-success btn-block" [disabled]="transfForm.invalid">
@@ -71,10 +51,6 @@
             </div>
           </div>
         </form>
-
-
-
-
       </div>
     </div>
   </div>

@@ -15,7 +15,6 @@ export default class HistorialController {
     }
   }
 
-
   static async findAll(req: Request, res: Response) {
     try {
       const historial = await Historial.findAll({ include: [{ model: Destinatario }] });

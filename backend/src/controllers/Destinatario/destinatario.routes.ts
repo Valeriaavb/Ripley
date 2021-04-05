@@ -3,10 +3,9 @@ import DestinatarioController from './destinatario.controller';
 
 export default express
   .Router()
-  .post('/',  DestinatarioController.create)
+  .post('/', DestinatarioController.create)
   .get('/', DestinatarioController.findAll)
   .get('/:id', DestinatarioController.getOne)
   .put('/', DestinatarioController.update)
 
 
- 

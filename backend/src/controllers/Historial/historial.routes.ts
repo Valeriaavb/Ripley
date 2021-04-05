@@ -3,6 +3,5 @@ import HistorialController from './historial.controller';
 
 export default express
   .Router()
-  .post('/',  HistorialController.create)
+  .post('/', HistorialController.create)
   .get('/', HistorialController.findAll)
- 

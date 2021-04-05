@@ -11,15 +11,13 @@ export class HistorialComponent implements OnInit {
   historials;
 
   constructor(
-    private historialService: HistorialService,
-
-
+    private historialService: HistorialService
   ) { }
 
   ngOnInit() {
     this.historialService.getAll().subscribe(
       (res) => {
-        this.historials=res;
+        this.historials = res;
       },
       (err) => console.error(err)
     );

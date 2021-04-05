@@ -1,8 +1,6 @@
 import { Response, Request } from 'express';
 import Destinatario from '../../models/Destinatario';
 
-
-
 export default class DestinatarioController {
   model = Destinatario;
 
@@ -15,7 +13,6 @@ export default class DestinatarioController {
       res.send(e);
     }
   }
-
 
   static async findAll(req: Request, res: Response) {
     try {

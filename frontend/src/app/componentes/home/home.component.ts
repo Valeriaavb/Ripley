@@ -19,11 +19,10 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.destinatarioService.getAll().subscribe(
       (res) => {
-        this.destinatarios=res;
+        this.destinatarios = res;
       },
       (err) => console.error(err)
     );
-
   }
 
 }

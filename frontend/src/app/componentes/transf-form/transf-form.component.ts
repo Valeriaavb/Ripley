@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Select2OptionData } from 'ng2-select2';
 import { DestinatarioService } from '../../services/destinatario.service';
 import { HistorialService } from '../../services/historial.service';
-import { Router} from '@angular/router';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 
@@ -41,14 +41,13 @@ export class TransfFormComponent implements OnInit {
     );
 
     this.transfForm = this.formBuilder.group({
-      destinatario_id:[],
+      destinatario_id: [],
       monto: [, Validators.required],
       descripcion: []
     });
 
 
   }
-
 
 
   formatBanksSelect2Interface(arrayToTransform) {
@@ -80,22 +79,21 @@ export class TransfFormComponent implements OnInit {
       descripcion: this.transfForm.value.descripcion
     });
 
-    if( this.transfForm.value.monto<=0){
+    if (this.transfForm.value.monto <= 0) {
       Swal(
         'Error',
         'El monto debe ser mayor a cero',
         'error'
       )
-    }else{
+    } else {
       this.historialService.create(this.transfForm.value)
-      .subscribe(
-        res =>{
-          this.router.navigate(['/historial']);
-         },
-        err => console.error(err)
-      );
+        .subscribe(
+          res => {
+            this.router.navigate(['/historial']);
+          },
+          err => console.error(err)
+        );
     }
-   
   }
 
 }

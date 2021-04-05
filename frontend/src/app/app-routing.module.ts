@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {DestinatarioFormComponent} from './componentes/destinatario-form/destinatario-form.component'
+import { DestinatarioFormComponent } from './componentes/destinatario-form/destinatario-form.component'
 import { TransfFormComponent } from './componentes/transf-form/transf-form.component';
 import { HistorialComponent } from './componentes/historial/historial.component';
 import { HomeComponent } from './componentes/home/home.component';
@@ -12,11 +12,11 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component:  HomeComponent
+    component: HomeComponent
   },
   {
     path: 'historial',
-    component:  HistorialComponent
+    component: HistorialComponent
   },
   {
     path: 'destinatario/editar/:id',

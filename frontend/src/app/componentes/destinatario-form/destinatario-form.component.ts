@@ -36,10 +36,8 @@ export class DestinatarioFormComponent implements OnInit {
       banco: [, Validators.required],
       n_cuenta: [, Validators.required],
       tipo_cuenta: [, Validators.required],
-      id:[]
+      id: []
     });
-
-
     if (params.id) {
       this.destinatarioService.getOne(params.id).subscribe(
         (res) => {
@@ -47,20 +45,19 @@ export class DestinatarioFormComponent implements OnInit {
           this.destinatarioForm.setValue({
             rut: this.destinatario.rut,
             nombre: this.destinatario.nombre,
-            correo:this.destinatario.correo,
+            correo: this.destinatario.correo,
             numero: this.destinatario.numero,
             banco: this.destinatario.banco,
             n_cuenta: this.destinatario.n_cuenta,
             tipo_cuenta: this.destinatario.tipo_cuenta,
-            id:this.destinatario.id
+            id: this.destinatario.id
           })
           this.edit = true;
-          this.tittle="Editar Destinatario";
+          this.tittle = "Editar Destinatario";
         },
         (err) => console.error(err)
       );
     }
-
 
     this.bancoService.getAll().subscribe(
       (res) => {
@@ -80,7 +77,6 @@ export class DestinatarioFormComponent implements OnInit {
       );
   }
 
-
   editar() {
     this.destinatarioService.update(this.destinatarioForm.value)
       .subscribe(
@@ -90,7 +86,5 @@ export class DestinatarioFormComponent implements OnInit {
         err => console.error(err)
       );
   }
-
-
 
 }

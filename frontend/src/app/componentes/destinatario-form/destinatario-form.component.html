@@ -6,26 +6,22 @@
           <h4>{{tittle}}:</h4>
           <div class="row justify-content-around">
             <div class="form-group  mb-4 col-md-4">
-
               <label for="nombre">Nombre:</label>
               <input id="nombre" type="text" formControlName="nombre" class="form-control"
                 placeholder="Nombre del destinatario">
               <div *ngIf="destinatarioForm.get('nombre').errors && destinatarioForm.get('nombre').dirty">
                 <p *ngIf="destinatarioForm.get('nombre').hasError('requiered')">Debe llenar el campo</p>
               </div>
-
-
             </div>
             <div class="form-group mb-4 col-md-4">
               <label for="rut">RUT:</label>
-              <input id="rut" type="number" min=0 formControlName="rut" class="form-control" placeholder="RUT del destinatario">
+              <input id="rut" type="number" min=0 formControlName="rut" class="form-control"
+                placeholder="RUT del destinatario">
               <div *ngIf="destinatarioForm.get('rut').errors && destinatarioForm.get('rut').dirty">
                 <p *ngIf="destinatarioForm.get('rut').hasError('requiered')">Debe llenar el campo</p>
               </div>
             </div>
           </div>
-
-
           <div class="row justify-content-around">
             <div class="form-group mb-4 col-md-4">
               <label for="correo">Correo:</label>
@@ -35,9 +31,6 @@
                 <p *ngIf="destinatarioForm.get('correo').hasError('requiered')">Debe llenar el campo</p>
               </div>
             </div>
-
-
-
             <div class="form-group mb-4 col-md-4">
               <label for="numero">Número de telefono:</label>
               <input id="numero" type="number" min=0 formControlName="numero" class="form-control"
@@ -47,7 +40,6 @@
               </div>
             </div>
           </div>
-
           <div class="row justify-content-around">
             <div class="form-group mb-4 col-md-4">
               <label for="banco">Banco:</label>
@@ -72,10 +64,7 @@
               </div>
             </div>
           </div>
-
-
           <div class="row">
-
             <div class="form-group  mb-4 col-md-4" style="padding-left: 10%;">
               <label for="n_cuenta">Número de cuenta:</label>
               <input id="n_cuenta" type="number" min=0 formControlName="n_cuenta" class="form-control"
@@ -85,19 +74,14 @@
               </div>
             </div>
           </div>
-
           <div class="row justify-content-around">
             <div class="form-group mb-4 col-md-4">
-              <button class="btn btn-success btn-block"  [disabled]="destinatarioForm.invalid">
+              <button class="btn btn-success btn-block" [disabled]="destinatarioForm.invalid">
                 Guardar
               </button>
             </div>
           </div>
         </form>
-
-
-
-
       </div>
     </div>
   </div>
