@@ -1,0 +1,12 @@
+Para realizar la conexion a la BD se necesitan los siguientes parametros:
+  host: "localhost",
+  port: 3306,
+  database: "ripley",
+  username: "unisuser",
+  password:"password"
+  
+  
+  
+
+
+
